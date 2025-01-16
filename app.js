@@ -8,6 +8,19 @@
  */
 //Dependencies
 import puppeteer from "puppeteer";
+import { browserConfig } from "./lib/helpers/browserConfig.js";
 
 //Module Scaffolding
 export const app = {};
+app.mainFunction = async () => {
+  const browser = await puppeteer.launch({
+    executablePath: browserConfig.executablePathe,
+    userDataDir: browserConfig.userDataDir,
+    headless: false,
+    defaultViewport: null,
+    args: ["--start-maximized"],
+    devtools: false,
+  });
+
+  const page = await browser.newPage();
+};
