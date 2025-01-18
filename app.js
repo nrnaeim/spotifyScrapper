@@ -46,7 +46,7 @@ app.mainFunction = async () => {
   }
 
   for (let i = 0; i < inputs.length; i++) {
-    await page.goto(inputs[i].allbumURL, { waitUntil: "networkidle0" });
+    await page.goto(inputs[i].URL, { waitUntil: "networkidle0" });
 
     let scrolled = 0;
     while (true) {
